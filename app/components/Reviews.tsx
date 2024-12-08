@@ -1,7 +1,6 @@
 'use client'
 import { ReviewDetails } from '@/constants'
 import Image from 'next/image'
-import React, { useState } from 'react'
 
 interface ReviewIndexProps{
     currentIndex: number
