@@ -1,4 +1,4 @@
-import { DestinationProps, ServiceCardProps } from "@/types"
+import { DestinationProps, ReviewProps, ServiceCardProps } from "@/types"
 
 export const Sponsors = [
     {
@@ -144,8 +144,33 @@ export const TravelPointDetails =[
     }
 ]
 
-export const Review = [
+export const ReviewDetails:ReviewProps[] = [
     {
-        
+        image: '/image (3).png',
+        name: 'Mary Omotosho',
+        role: 'Travel Enthusiast',
+        desc: 'We help you discover your ideal destination with tailored recommendations. Find your dream location effortlessly for an unforgettable journey.'
+
+    },
+    {
+        image: '/image (3).png',
+        name: 'Tayo Omotosho',
+        role: 'Travel Enthusiast',
+        desc: 'We help you discover your ideal destination with tailored recommendations. Find your dream location effortlessly for an unforgettable journey.'
+
+    },
+    {
+        image: '/image (3).png',
+        name: 'Tope Omotosho',
+        role: 'Travel Enthusiast',
+        desc: 'We help you discover your ideal destination with tailored recommendations. Find your dream location effortlessly for an unforgettable journey.'
+
+    },
+    {
+        image: '/image (3).png',
+        name: 'Beauty Omotosho',
+        role: 'Travel Enthusiast',
+        desc: 'We help you discover your ideal destination with tailored recommendations. Find your dream location effortlessly for an unforgettable journey.'
+
     }
 ]

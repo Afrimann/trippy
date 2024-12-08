@@ -1,15 +1,40 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { Header, Review, Sponsors, TravelPoint } from './components'
 import { Hero } from './components'
 import SponsorsList from './components/Sponsors'
-import { ListofDestination, Services } from '@/constants'
+import { ListofDestination, ReviewDetails, Services } from '@/constants'
 import ServiceCard from './components/ServiceCard'
 import TopDestinations from './components/TopDestination'
 import Image from 'next/image'
 
 const page = () => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [extreme, setExtreme] = useState(false)
+
+  const showNexReview = () => {
+    if (currentIndex < ReviewDetails.length - 1) {
+      setCurrentIndex(currentIndex + 1)
+      setExtreme(false)
+    }
+    else {
+      const lastLine = ReviewDetails.length - 1
+      setExtreme(true)
+      setCurrentIndex(lastLine)
+    }
+  }
+
+  const showPrevReview = () => {
+    if (currentIndex === 0) {
+      setExtreme(true)
+      setCurrentIndex(0)
+    }
+    else {
+      setCurrentIndex(currentIndex - 1)
+    }
+  }
+
   return (
     <div className='bg-backgroundWheat min-h-[100vh] w-full px-5 md:px-12 flex flex-col overflow-hidden'>
       <section className='flex items-center justify-center mt-4'>
@@ -113,8 +138,12 @@ const page = () => {
         </div>
       </section>
 
-      <section className='review'>
-        <Review />
+      <section className='review mb-12'>
+        <Review
+          showNextReview={showNexReview}
+          showPrevReview={showPrevReview}
+          currentIndex={currentIndex}
+        />
       </section>
     </div>
   )
