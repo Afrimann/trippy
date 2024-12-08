@@ -1,101 +1,123 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+import React from 'react'
+import { Header, Review, Sponsors, TravelPoint } from './components'
+import { Hero } from './components'
+import SponsorsList from './components/Sponsors'
+import { ListofDestination, Services } from '@/constants'
+import ServiceCard from './components/ServiceCard'
+import TopDestinations from './components/TopDestination'
+import Image from 'next/image'
+
+const page = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className='bg-backgroundWheat min-h-[100vh] w-full px-5 md:px-12 flex flex-col overflow-hidden'>
+      <section className='flex items-center justify-center mt-4'>
+        <Header />
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <section className="hero">
+        <Hero />
+
+        <div className='Sponsors  w-[80%]'>
+          <SponsorsList />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      </section>
+
+      <section className="services w-[100%] px-24 flex flex-col mt-12">
+        <div className=''>
+          <h2 className='heading__head'>Services</h2>
+          <p className='heading__para'>Our top value categories for you</p>
+        </div>
+
+        <div className='serviceList mt-8 mb-8'>
+          {
+            Services.map
+              ((service, index) =>
+              (
+                <ServiceCard
+
+                  title={service.title}
+                  description={service.description}
+                  img={service.img}
+                  key={index}
+
+                />
+              ))
+          }
+        </div>
+      </section>
+
+      <section className='topDestinations'>
+        <TopDestinations
+          ListofDestination={ListofDestination} />;
+
+      </section>
+
+      <section className='travelPoint mt-12 ml-24 w-[100%] overflow-hidden'>
+        <TravelPoint />
+      </section>
+
+      <section className='keyFeautures mt-12 mx-24 w-full flex items-center gap-12 mb-12'>
+        {/* left side */}
+        <div className='image '>
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src='/Group 3.png'
+            alt='group'
+            width={500}
+            height={500}
+            className='object-contain'
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+
+        {/* right side */}
+        <div className='w-[430px] h-[300px] flex flex-col gap-3 '>
+          <div className="head">
+            <h2 className='heading__head'>key features</h2>
+            <h2 className='heading__para'>We offer best services</h2>
+          </div>
+          <div>
+            <p>We help you discover your ideal destination with tailored reccomendations. Find your dream locations effortlessly for an unforgettable journey.</p>
+          </div>
+          <div className='flex gap-4 border border-textSecondary items-center p-2 rounded-lg'>
+            <span className='image'>
+              <Image
+                src='/image 2.png'
+                alt='icon'
+                width={50}
+                height={50}
+                className='object-contain'
+              />
+            </span>
+            <span className='content'>
+              <h3 className='text-secondaryOrange font-semibold text-[15px]'>Get the best recommendations
+              </h3>
+              <h3 className='text-headingBlue text-[13px]'>It has roots in a piece of classical</h3>
+            </span>
+          </div>
+          <div className='flex gap-4 border border-textSecondary items-center p-2 rounded-lg'>
+            <span className='image'>
+              <Image
+                src='/image 5.png'
+                alt='icon'
+                width={50}
+                height={50}
+                className='object-contain'
+              />
+            </span>
+            <span className='content'>
+              <h3 className='text-secondaryOrange font-semibold text-[15px]'>Schedule trips</h3>
+              <h3 className='text-headingBlue text-[13px]'>It has roots in a piece of classical</h3>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section className='review'>
+        <Review />
+      </section>
     </div>
-  );
+  )
 }
+
+export default page

@@ -1,21 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+.heading__head{
+  @apply text-secondaryOrange uppercase text-[14px] 
+}
+.heading__para{
+  @apply font-bold text-[20px] text-headingBlue
+}
+.linkActive{
+  @apply text-accents
+}
+.header{
+  @apply bg-blurWhite w-[900px] h-[70px] rounded-full flex flex-col justify-center
+}
+.navBar{
+  @apply flex items-center justify-between px-4 drop-shadow-2xl
+}
+.headerBtns{
+  @apply hidden  md:flex gap-8
+}
+.navLinks{
+  @apply hidden md:block
+}
+.mobileHamburger{
+  @apply block md:hidden
+}
+
+/* hero styles begin */
+.hero{
+  @apply w-full flex flex-col items-center justify-center
+}
+.heroWrapper{
+  @apply  w-[75%] h-[80vh] flex justify-center items-center mt-4 md:mt-8 mb-8
+}
+.heroTextBtns{
+  @apply flex gap-3 md:gap-8 mt-4
+}
+.heroText{
+  @apply flex-1 h-full w-full flex flex-col justify-center
+}
+.heroImageDisplay{
+  @apply hidden flex-1 h-full w-full md:flex gap-4 items-center
+}
+
+/* SPONSORS */
+.SponsorsList{
+  @apply flex flex-wrap gap-10 justify-between
+}
+
+/* SERVICES */
+.serviceCard{
+  @apply w-[300px] h-[280px] bg-white rounded-lg flex flex-col items-center justify-center gap-6 drop-shadow-lg
+}
+.serviceList{
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mx-auto
+}
+.serviceDescription{
+  @apply text-center
+}
+
+
+/* DESTINATION */
+
+.destinationCard{
+  @apply w-[300px] h-[350px] flex flex-col rounded-2xl drop-shadow-lg transition-all duration-300 ease-in hover:scale-110
+}
+
+.destination__lists{
+  @apply flex gap-8
+}
+.dest__image{
+  @apply flex-1 z-0
+  
+}
+.dest__details{
+  @apply flex-1 z-[100] bg-white p-4
+
+}
+
+.frame{
+  @apply border border-secondaryOrange w-[200px] h-[100px] text-[14px] flex flex-col items-center justify-center rounded-xl
+}
+.para{
+  @apply max-w-[60%]
 }
