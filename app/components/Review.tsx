@@ -43,6 +43,8 @@ const Review = ({showNextReview, showPrevReview,currentIndex}: ReviewDisplayProp
                     />
                 </div>
             </div>
+
+            <div className='levels'></div>
         </div>
     )
 }

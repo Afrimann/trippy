@@ -2,6 +2,8 @@ export interface ServiceCardProps{
     img: string
     title: string
     description: string
+    aos: string
+    delay: string
 }
 
 export interface DestinationProps{

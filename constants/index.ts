@@ -174,3 +174,10 @@ export const ReviewDetails:ReviewProps[] = [
 
     }
 ]
+
+
+export const FooterDetails= [
+    {
+        
+    }
+]

@@ -11,16 +11,17 @@ const Hero = () => {
                     alt='explore the world'
                     width={200}
                     height={50}
+                    data-aos='fade-in-left'
                 />
 
-                <p className='text-[40px] font-bold max-w-[100%]  md:max-w-[300px]'>
+                <p data-aos='fade-up' className='text-[40px] font-bold max-w-[100%]  md:max-w-[300px]'>
                     Travel <span className='text-secondaryOrange'>top destination</span> of the world
                 </p>
-                <p className='text-gray-500 max-w-[100%] md:max-w-[80%]'>
+                <p data-aos='fade-up-right' className='text-gray-500 max-w-[100%] md:max-w-[80%]'>
                     We always make our customer happy by providing as many choices as possible
                 </p>
 
-                <div className='heroTextBtns'>
+                <div data-aos='fade-down-right' className='heroTextBtns'>
                     <Button
                         styles='px-6 py-1.5 text-white font-semibold font-roboto bg-primaryBlue rounded-full'
                         event={() => alert('not yet avalable')}
@@ -34,7 +35,7 @@ const Hero = () => {
                 </div>
             </div>
             <div className='heroImageDisplay'>
-                <div className='flex flex-col gap-4'>
+                <div data-aos='zoom-in-left' className='flex flex-col gap-4'>
                     <div className='image'>
                         <Image
                             src='/Rectangle 1 (1).png'
@@ -54,7 +55,7 @@ const Hero = () => {
                         />
                     </div>
                 </div>
-                    <div>
+                    <div data-aos='zoom-in-right'>
                         <Image 
                         src='/Rectangle 3.png'
                         alt='img'

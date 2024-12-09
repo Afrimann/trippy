@@ -1,15 +1,29 @@
 'use client'
 
-import React, { useState } from 'react'
-import { Header, Review, Sponsors, TravelPoint } from './components'
+import React, { useEffect, useState } from 'react'
+import { Header, Review, TravelPoint } from './components'
 import { Hero } from './components'
 import SponsorsList from './components/Sponsors'
 import { ListofDestination, ReviewDetails, Services } from '@/constants'
 import ServiceCard from './components/ServiceCard'
 import TopDestinations from './components/TopDestination'
 import Image from 'next/image'
+import Newsletter from './components/Newsletter'
+import Footer from './components/Footer'
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
 
 const page = () => {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration in ms
+      easing: 'ease-in-out', // Easing function
+      once: true, // Whether animation should happen only once
+      mirror: false, // Whether elements should animate out when scrolling past them
+    });
+  }, []);
+
   const [currentIndex, setCurrentIndex] = useState(0)
   const [extreme, setExtreme] = useState(false)
 
@@ -41,7 +55,7 @@ const page = () => {
         <Header />
       </section>
 
-      <section className="hero">
+      <section className="hero" id='home'>
         <Hero />
 
         <div className='Sponsors  w-[80%]'>
@@ -49,10 +63,10 @@ const page = () => {
         </div>
       </section>
 
-      <section className="services w-[100%] px-24 flex flex-col mt-12">
+      <section className="services w-[100%] px-24 flex flex-col mt-12" id='discover'>
         <div className=''>
-          <h2 className='heading__head'>Services</h2>
-          <p className='heading__para'>Our top value categories for you</p>
+          <h2 data-aos='fade-in-right' className='heading__head'>Services</h2>
+          <p data-aos='fade-down-left' className='heading__para'>Our top value categories for you</p>
         </div>
 
         <div className='serviceList mt-8 mb-8'>
@@ -61,6 +75,8 @@ const page = () => {
               ((service, index) =>
               (
                 <ServiceCard
+                  aos='fade-up'
+                  delay={`${index * 200}`}
 
                   title={service.title}
                   description={service.description}
@@ -73,7 +89,7 @@ const page = () => {
         </div>
       </section>
 
-      <section className='topDestinations'>
+      <section className='topDestinations' id='specials'>
         <TopDestinations
           ListofDestination={ListofDestination} />;
 
@@ -144,6 +160,14 @@ const page = () => {
           showPrevReview={showPrevReview}
           currentIndex={currentIndex}
         />
+      </section>
+
+      <section className='newsletter w-full flex flex-col items-center mb-12' id='contact'>
+        <Newsletter />
+      </section>
+
+      <section className='footer bg-bgGrey w-{100%} overflow-hidden p-0 m-0'>
+        <Footer />
       </section>
     </div>
   )

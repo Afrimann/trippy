@@ -1,6 +1,7 @@
 import React from 'react'
 import { Sponsors } from '@/constants'
 import Image from 'next/image'
+
 const SponsorsList = () => {
     return (
         <div className='SponsorsList'>

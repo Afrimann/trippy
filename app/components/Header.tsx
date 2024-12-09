@@ -21,10 +21,10 @@ const Header = () => {
                 </div>
                 <div className='navLinks'>
                     <ul className='flex flex-row gap-6'>
-                        <li className='font-roboto'><a href="#" onClick={() => handleActiveChange('home')} className={`${activeLink === 'home' ? 'linkActive' : ''}`}>Home</a></li>
-                        <li className='font-roboto'><a href="#" onClick={() => handleActiveChange('discover')} className={`${activeLink === 'discover' ? 'linkActive' : ''}`}>Discover</a></li>
-                        <li className='font-roboto'><a href="#" onClick={() => handleActiveChange('special')} className={`${activeLink === 'special' ? 'linkActive' : ''}`}>Special Deals</a></li>
-                        <li className='font-roboto'><a href="#" onClick={() => handleActiveChange('contact')} className={`${activeLink === 'contact' ? 'linkActive' : ''}`}>Contact</a></li>
+                        <li className='font-roboto'><a href="#home" onClick={() => handleActiveChange('home')} className={`${activeLink === 'home' ? 'linkActive' : ''}`}>Home</a></li>
+                        <li className='font-roboto'><a href="#discover" onClick={() => handleActiveChange('discover')} className={`${activeLink === 'discover' ? 'linkActive' : ''}`}>Discover</a></li>
+                        <li className='font-roboto'><a href="#specials" onClick={() => handleActiveChange('special')} className={`${activeLink === 'special' ? 'linkActive' : ''}`}>Special Deals</a></li>
+                        <li className='font-roboto'><a href="#contact" onClick={() => handleActiveChange('contact')} className={`${activeLink === 'contact' ? 'linkActive' : ''}`}>Contact</a></li>
                     </ul>
                 </div>
                 <div className='headerBtns'>
