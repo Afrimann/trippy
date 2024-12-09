@@ -12,8 +12,9 @@ import Newsletter from './components/Newsletter'
 import Footer from './components/Footer'
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
+import { log } from 'console'
 
-const page = () => {
+const Page = () => {
 
   useEffect(() => {
     AOS.init({
@@ -26,6 +27,8 @@ const page = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0)
   const [extreme, setExtreme] = useState(false)
+  console.log(extreme);
+  
 
   const showNexReview = () => {
     if (currentIndex < ReviewDetails.length - 1) {
@@ -173,4 +176,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const UseActiveNav = (initialActive: any) => {
+const UseActiveNav = (initialActive: string) => {
     const [activeLink, setActiveLink] = useState(initialActive)
     const handleActiveChange = (link: any) => {
         setActiveLink(link);

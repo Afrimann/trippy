@@ -29,11 +29,12 @@ export const Sponsors = [
     }
 ]
 
-export const Services:ServiceCardProps[] = [
+export const Services = [
     {
         title: 'Best Tour Guide',
         description: 'Discover the region with our top-rated local guides. Enjoy personalized tours and insider knowledge.',
-        img:'/image.png'
+        img:'/image.png',
+ 
     },
     {
 
@@ -172,12 +173,5 @@ export const ReviewDetails:ReviewProps[] = [
         role: 'Travel Enthusiast',
         desc: 'We help you discover your ideal destination with tailored recommendations. Find your dream location effortlessly for an unforgettable journey.'
 
-    }
-]
-
-
-export const FooterDetails= [
-    {
-        
     }
 ]
