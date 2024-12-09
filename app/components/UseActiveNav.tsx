@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const UseActiveNav = (initialActive: string) => {
     const [activeLink, setActiveLink] = useState(initialActive)
-    const handleActiveChange = (link: any) => {
+    const handleActiveChange = (link: string) => {
         setActiveLink(link);
     };
 

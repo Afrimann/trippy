@@ -3,7 +3,10 @@ import Image from 'next/image'; // Assuming you're using Next.js
 import Destination from './Destination'; // Assuming you have a Destination component
 import { DestinationProps } from '@/types';
 
-const TopDestinations = ({ListofDestination}: any) => {
+interface TopDestinationProps{
+  ListofDestination: DestinationProps[]
+}
+const TopDestinations = ({ListofDestination}: TopDestinationProps) => {
   // State to track the current slide index
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -56,7 +59,7 @@ const TopDestinations = ({ListofDestination}: any) => {
         className="destination__lists mt-6 w-full flex transition-transform duration-500"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }} // Slide the content based on index
       >
-        {ListofDestination.map((list:DestinationProps, index:string) => (
+        {ListofDestination.map((list:DestinationProps, index:number) => (
           <Destination
             image={list.image}
             alt={list.alt}
