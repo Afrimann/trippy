@@ -4,6 +4,7 @@ import UseActiveNav from './UseActiveNav'
 import Image from 'next/image'
 import Button from './Button'
 import { FaBars } from 'react-icons/fa'
+
 const Header = () => {
     const { activeLink, handleActiveChange } = UseActiveNav('home')
 
@@ -30,13 +31,13 @@ const Header = () => {
                 <div className='headerBtns'>
                     <Button
                         styles='bg-transparent'
-                        event={() => alert('Not yet available')}
                         title='Login'
+                        route='/auth'
                     />
                     <Button
                         styles='bg-primaryBlue px-8 py-2 rounded-full text-white'
-                        event={() => alert('Not yet available')}
                         title='Sign Up'
+                        route='/auth'
                     />
                 </div>
 
@@ -45,6 +46,7 @@ const Header = () => {
 
                 </div>
             </nav>
+
         </header>
     )
 }
